@@ -6,7 +6,7 @@ import CreateTweet from "../components/CreateTweet";
 const HomePage = () => {
   const { isLoading, isError, error, data } = getTweets();
   return (
-    <div className="main--container w-full h-screen overflow-y-scroll scroll-smooth">
+    <div className="main--container w-full h-screen overflow-y-scroll scroll-smooth border-l-2">
       <div className="px-3 mb-10">
         <h1 className="text-xl font-bold">Home</h1>
       </div>

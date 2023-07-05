@@ -63,7 +63,7 @@ const TweetCard = ({ tweet }) => {
     setReply(e.target.value);
   };
   return (
-    <div className="tweet--container w-full flex space-x-2 p-4 border-b-2 hover:bg-slate-100 cursor-pointer">
+    <div className="tweet--container w-full flex space-x-2 p-1 pr-4 md:p-4 border-b-2 hover:bg-slate-100 cursor-pointer">
       <img src={profile} className="w-9 h-8" />
       <div className="w-full">
         <div onClick={() => navigate(`/tweet/${tweet.id}`)}>

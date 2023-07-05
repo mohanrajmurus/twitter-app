@@ -87,7 +87,7 @@ const SideNavBar = () => {
       </nav>
 
       {Object.keys(user).length ? (
-        <div className="profile--card w-full flex justify-between items-center space-x-2 cursor-pointer  rounded-2xl px-2 py-2 hover:bg-zinc-200 relative">
+        <div className="profile--card w-full flex justify-between items-center space-x-2 cursor-pointer  rounded-2xl px-2 py-2 hover:bg-zinc-200 relative"  onClick={() => setLogoutBtn(!logoutBtn)}>
           <div className="flex space-x-4 items-center">
             <img src={profile} alt="profile" className="w-10 h-10" />
             <div className="hidden lg:flex flex-col justify-self-start">
@@ -98,7 +98,7 @@ const SideNavBar = () => {
           <BiDotsHorizontal
             size={25}
             className="hidden lg:block justify-self-end"
-            onClick={() => setLogoutBtn(!logoutBtn)}
+           
           />
           {logoutBtn && (
             <div className="w-full flex flex-col space-y-3 p-3 rounded-3xl bg-white shadow-2xl absolute -top-24 right-1 z-20">

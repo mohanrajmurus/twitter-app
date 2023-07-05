@@ -45,11 +45,11 @@ const CreateTweet = () => {
     }
   };
   return (
-    <div className="flex space-x-3 border-b-2 px-3 cursor-pointer">
+    <div className="flex flex-col border-b-2 px-1 md:px-3 cursor-pointer md:flex-row">
       <div className="w-1/12">
-        <img src={profile} alt="profile" className="w-10 h-10 " />
+        <img src={profile} alt="profile" className="w-10 h-10 hidden md:block" />
       </div>
-      <div className="w-10/12 flex flex-col items-start space-y-4">
+      <div className="w-10/12 flex flex-col items-start space-y-2 md:space-y-4">
         <div>
           <textarea
             placeholder="What is happening?!"
