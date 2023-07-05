@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.main--container::-webkit-scrollbar {
+    display: none;
+}
+
+.container::-webkit-scrollbar {
+    display: none;
+}
+
+.main--container {
+    border-left: 1px solid rgb(213, 213, 213);
+    border-right: 1px solid rgb(213, 213, 213);
+}
+
+.more--btn {
+    justify-self: flex-end;
+}
+
+.login--container::backdrop {
+    background-color: rgb(156, 156, 156);
+}
+
+.edit--btn {
+    border: 1px solid rgb(156, 156, 156);
+}
