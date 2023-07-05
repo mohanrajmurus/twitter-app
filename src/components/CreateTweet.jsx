@@ -53,11 +53,10 @@ const CreateTweet = () => {
         <div>
           <textarea
             placeholder="What is happening?!"
-            rows={1}
-            cols={60}
+
             value={newTweet}
             onChange={(e) => setNewTweet(e.target.value)}
-            className="outline-none resize-none"
+            className="outline-none resize-none w-full"
           />
         </div>
         <div className="flex items-center space-x-2 cursor-pointer">

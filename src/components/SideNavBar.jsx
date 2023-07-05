@@ -118,12 +118,12 @@ const SideNavBar = () => {
         </div>
       ) : (
         <div
-          className="w-fit px-2 bg-sky-500 rounded-3xl flex py-2 hover:bg-sky-600 lg:w-full justify-center"
+          className="w-fit px-1 bg-sky-500 rounded-xl lg:rounded-3xl flex py-2 hover:bg-sky-600 lg:w-full justify-center"
           onClick={() => navigate("/login")}
         >
           <NavLink
             to="/login"
-            className="text-lg text-white font-bold cursor-pointer"
+            className="text-sm md:text-lg text-white font-bold cursor-pointer"
           >
             Login
           </NavLink>

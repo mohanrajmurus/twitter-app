@@ -34,11 +34,11 @@ const ResetPassword = () => {
   };
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm">
-      <div className="login--container w-1/2 bg-white fixed top-1/4 left-1/4 z-10 py-10 rounded-2xl">
+      <div className="login--container w-full fixed md:w-1/2 bg-white  top-1/4 md:left-1/4 z-10 py-10 rounded-2xl">
         <div className=" w-full flex flex-col items-center space-y-4">
           <BsTwitter size={25} fill="#1e9bf0" />
           <h1 className="text-xl font-bold">Find your Twitter account</h1>
-          <span className="text-sm text-gray-500">
+          <span className="text-sm text-gray-500 text-justify px-5">
             Enter the username associated with your account to change your
             password.
           </span>
@@ -52,7 +52,7 @@ const ResetPassword = () => {
               type="text"
               placeholder="Enter Username"
               name="userName"
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className="w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
               onChange={(e) => setUserName(e.target.value)}
               value={userName}
               disabled={passField?true:false}
@@ -62,13 +62,13 @@ const ResetPassword = () => {
                 type="password"
                 placeholder="Enter New Password"
                 name="password"
-                className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+                className="w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
                 onChange={(e) => setNewPass(e.target.value)}
                 value={newPass}
               />
             )}
             <button
-              className="w-1/3 px-3 py-2 bg-sky-500 text-white rounded-lg"
+              className="w-1/3 md:w-3/5 px-3 py-2 bg-sky-500 text-white rounded-lg"
               type="submit"
             >
               {passField ? "Reset Password" : "Find"}

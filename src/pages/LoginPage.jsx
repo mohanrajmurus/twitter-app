@@ -50,16 +50,16 @@ const LoginPage = () => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm">
      
-      <div className="login--container w-1/2 bg-white fixed top-1/4 left-1/4 z-10 py-10 rounded-2xl">
+      <div className="login--container w-full fixed lg:w-1/2 bg-white  top-1/4 lg:left-1/4 z-10 py-10 rounded-2xl">
         <div className=" w-full flex flex-col items-center space-y-4">
           <BsTwitter size={25} fill="#1e9bf0" />
           {errorMessage && <span className="text-red-500">{errorMessage}</span>}
           <h1 className="text-2xl font-bold">Sign in to Twitter</h1>
-          <div className="google--signin w-1/3 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
+          <div className="google--signin w-3/5 sm:w-1/3 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
             <FcGoogle size={20} />
             <button className="">Signin with Google</button>
           </div>
-          <div className="apple--signin w-1/3 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
+          <div className="apple--signin w-3/5 sm:w-1/3 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
             <FaApple size={20} />
             <button>Signin with Apple</button>
           </div>
@@ -74,7 +74,7 @@ const LoginPage = () => {
               value={logindata.userName}
               placeholder="Phone,email or username"
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className="w-3/5 sm:w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <input
               type="password"
@@ -82,10 +82,10 @@ const LoginPage = () => {
               value={logindata.password}
               name="password"
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className="w-3/5 sm:w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <button
-              className="w-1/3 px-3 py-2 bg-sky-500 text-white rounded-lg"
+              className="w-3/5 sm:w-1/3 px-3 py-2 bg-sky-500 text-white rounded-lg"
               type="submit"
             >
               Login

@@ -57,15 +57,15 @@ const SignupPage = () => {
   };
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm">
-      <div className="login--container w-full relative left-0 lg:w-1/2 bg-white lg:fixed top-16 lg:left-1/4 z-10 py-10 rounded-2xl">
+      <div className="login--container w-full fixed md:w-1/2 bg-white  top-1/4 md:left-1/4 z-10 py-10 rounded-2xl">
         <div className=" w-full flex flex-col items-center space-y-4">
           <BsTwitter size={25} fill="#1e9bf0" />
           <h1 className="text-2xl font-bold">Join Twitter today</h1>
-          <div className="google--signin w-1/3 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
+          <div className="google--signin  w-1/3 md:w-3/5 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
             <FcGoogle size={20} />
             <button className="">Signup with Google</button>
           </div>
-          <div className="apple--signin w-1/3 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
+          <div className="apple--signin  w-1/3 md:w-3/5 flex justify-center items-center border-2 border-gray-400 rounded-3xl py-1 space-x-3">
             <FaApple size={20} />
             <button>Signup with Apple</button>
           </div>
@@ -81,7 +81,7 @@ const SignupPage = () => {
               placeholder="First Name"
               value={user.firstName}
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className=" w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <input
               type="text"
@@ -89,7 +89,7 @@ const SignupPage = () => {
               value={user.lastName}
               placeholder="Last Name"
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className=" w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <input
               type="text"
@@ -97,7 +97,7 @@ const SignupPage = () => {
               value={user.loginId}
               placeholder="Username"
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className=" w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <input
               type="email"
@@ -105,7 +105,7 @@ const SignupPage = () => {
               value={user.email}
               placeholder="Email"
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className=" w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <input
               type="text"
@@ -113,7 +113,7 @@ const SignupPage = () => {
               value={user.contactNumber}
               placeholder="Mobile Number"
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className=" w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <input
               type="password"
@@ -121,10 +121,10 @@ const SignupPage = () => {
               value={user.password}
               name="password"
               onChange={handleChange}
-              className="w-1/3 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
+              className=" w-1/3 md:w-3/5 px-2 py-1 outline-none border-2 focus:border-sky-500 rounded-lg"
             />
             <button
-              className="w-1/3 px-3 py-2 bg-sky-500 text-white rounded-lg"
+              className=" w-1/3 md:w-3/5 px-3 py-2 bg-sky-500 text-white rounded-lg"
               type="submit"
             >
               Create Account
