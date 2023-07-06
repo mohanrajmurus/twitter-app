@@ -12,8 +12,6 @@ const SingleTweetPage = () => {
   const navigate = useNavigate();
   return (
     <div className="container w-full h-screen lg:w-4/5 mx-auto my-2 flex overflow-y-scroll">
-     
-
       <div className="main--container w-full h-screen overflow-y-scroll scroll-smooth">
         <div className="w-full flex items-center space-x-8 px-3 ">
           <MdOutlineArrowBack
@@ -35,27 +33,31 @@ const SingleTweetPage = () => {
           <div className="flex flex-col">
             <TweetCard tweet={data} />
             {data.replies?.map((item, i) => {
-                   // console.log(item);
-                  return (
-                    <div className="flex space-x-5 px-3 py-4" key={i}>
-                        <img src={profile} className="w-7 h-7" />
-                      <div>
-                      <div className="flex space-x-2">
-                        <NavLink onClick={() => navigate(`/${item.author.loginId}`)}>
-                          <span className="font-bold">{item.author?.firstName}</span>
-                        </NavLink>
-                        <span className="text-gray-400">
-                          @{item.author?.loginId}
+              // console.log(item);
+              return (
+                <div className="flex space-x-5 px-3 py-4" key={i}>
+                  <img src={profile} className="w-7 h-7" />
+                  <div>
+                    <div className="flex space-x-2">
+                      <NavLink
+                        onClick={() => navigate(`/${item.author.loginId}`)}
+                      >
+                        <span className="font-bold">
+                          {item.author?.firstName}
                         </span>
-                        <span className="text-gray-400">
-                          {timeCal(item.createdAt)}
-                        </span>
-                      </div>
-                      <span className="text-sm">{item.text}</span>
-                      </div>
+                      </NavLink>
+                      <span className="text-gray-400">
+                        @{item.author?.loginId}
+                      </span>
+                      <span className="text-gray-400">
+                        {timeCal(item.createdAt)}
+                      </span>
                     </div>
-                  );
-                })}
+                    <span className="text-sm">{item.text}</span>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
       </div>

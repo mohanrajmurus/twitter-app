@@ -101,7 +101,7 @@ const SideNavBar = () => {
            
           />
           {logoutBtn && (
-            <div className="w-full flex flex-col space-y-3 p-3 rounded-3xl bg-white shadow-2xl absolute -top-24 right-1 z-20">
+            <div className="w-fit md:w-full flex flex-col space-y-3 p-3 rounded-3xl bg-gray-200 shadow-2xl absolute -top-28 md:-top-24 -left-2 md:right-1 z-20">
               <span className="font-bold">Add an existing account</span>
               <span
               className="font-bold"
