@@ -20,7 +20,7 @@ const HashTags = () => {
       </div>
       <div className="w-full flex flex-col items-start space-y-2 bg-gray-300 rounded-xl pt-2">
         <h2 className="text-lg font-bold px-3">What’s happening</h2>
-        <div className="w-full">
+        <div className="w-full flex flex-col items-center">
         {isLoading ? (
           <div className="border-4 border-gray-300 border-t-sky-400 rounded-full h-10 w-10 animate-spin text-center mt-10"></div>
         ) : isError ? (

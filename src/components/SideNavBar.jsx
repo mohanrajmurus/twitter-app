@@ -35,7 +35,9 @@ const SideNavBar = () => {
             <span className="hidden lg:block text-xl">Home</span>
           </div>
         </NavLink>
-        <div className="flex justify-start py-2 px-2 w-fit rounded-3xl pr-5 space-x-4 items-center hover:bg-zinc-200 cursor-pointer">
+        <div className="flex justify-start py-2 px-2 w-fit rounded-3xl pr-5 space-x-4 items-center hover:bg-zinc-200 cursor-pointer" onClick={() =>
+             navigate('explore')
+            }>
           <span>
             <BiSearch size={25} />
           </span>
@@ -65,15 +67,15 @@ const SideNavBar = () => {
           </span>
           <span className="hidden lg:block text-xl">Bookmarks</span>
         </div>
-        <div className="flex justify-start py-2 px-2 w-fit rounded-3xl pr-5 space-x-4 items-center hover:bg-zinc-200 cursor-pointer">
+        <div className="flex justify-start py-2 px-2 w-fit rounded-3xl pr-5 space-x-4 items-center hover:bg-zinc-200 cursor-pointer" onClick={() =>
+              user.loginId ? navigate(`/${user.loginId}`) : navigate("/login")
+            }>
           <span>
             <RiAccountBoxFill size={20} />
           </span>
           <span
             className="hidden lg:block text-xl"
-            onClick={() =>
-              user.loginId ? navigate(`/${user.loginId}`) : navigate("/login")
-            }
+            
           >
             Profile
           </span>

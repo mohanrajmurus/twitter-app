@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getTweetByTag } from "../Util";
+import { getHashTags, getTweetByTag } from "../Util";
 import TweetCard from "../components/TweetCard";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 const ExplorePage = () => {
   const { id } = useParams();
   const { isLoading, isError, error, data } = getTweetByTag(
-    id.replace("#", "%23")
+    id?.replace("#", "%23")
   );
+
   const navigate = useNavigate();
   return (
     <div className="main--container w-full h-screen overflow-y-scroll scroll-smooth border-l-2">
@@ -27,6 +28,7 @@ const ExplorePage = () => {
             type="text"
             className="outline-none text-black text-md p-1 bg-inherit"
             placeholder="Search Twitter"
+            value={id}
           />
         </div>
       </div>
@@ -49,7 +51,7 @@ const ExplorePage = () => {
       ) : isError ? (
         <span>{error.message}</span>
       ) : (
-        data.map((item, i) => {
+        data?.map((item, i) => {
           return <TweetCard tweet={item} key={i} />;
         })
       )}

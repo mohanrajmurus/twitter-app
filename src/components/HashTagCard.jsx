@@ -11,7 +11,7 @@ const HashTagCard = ({tags}) => {
       <div className="flex flex-col" onClick={()=> navigate(`/tag/${tweetTag.replace('#','%23')}`)}>
        {/*  <span className="font-light text-sm">label</span> */}
         <span className="font-bold">{tweetTag}</span>
-        <span className="font-light text-sm">{} Tweets</span>
+        {/* <span className="font-light text-sm">{} Tweets</span> */}
       </div>
       {
         <BiDotsHorizontal

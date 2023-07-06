@@ -41,6 +41,10 @@ const route = createBrowserRouter([
         element:<ExplorePage/>
       },
       {
+        path:'explore',
+        element:<ExplorePage/>
+      },
+      {
         path: "login",
         element: <LoginPage />,
       },
