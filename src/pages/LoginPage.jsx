@@ -6,7 +6,7 @@ import { AiOutlineClose } from "react-icons/ai";
 import { NavLink, useNavigate } from "react-router-dom";
 import { User } from "../store/Context";
 import axios from "axios";
-import HomePage from "./HomePage";
+const url = __API_URL__
 const LoginPage = () => {
   const [logindata, setLogindata] = useState({
     loginId: "",
@@ -25,7 +25,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1.0/tweets/login",
+        `${url}tweets/login`,
         logindata
       );
       console.log(data);

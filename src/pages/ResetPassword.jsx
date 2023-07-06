@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 import { BsTwitter } from "react-icons/bs";
 import { NavLink, useNavigate } from "react-router-dom";
+const url = __API_URL__
 
 const ResetPassword = () => {
   const navigate = useNavigate();
@@ -14,14 +15,14 @@ const ResetPassword = () => {
     e.preventDefault();
     try {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1.0/tweets/users/all"
+        `${url}tweets/users/all`
       );
       const user = data.filter((user) => user.loginId === userName);
       if (user.length) {
         setErrMess("");
         setPassField(true);
         const { data } = await axios.put(
-          `http://localhost:5000/api/v1.0/tweets/user/${userName}/resetPassword/${newPass}`
+          `${url}tweets/user/${userName}/resetPassword/${newPass}`
         );
         setTimeout(() => navigate("/login"), 2000);
       } else {

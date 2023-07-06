@@ -81,10 +81,10 @@ const TweetCard = ({ tweet }) => {
           </div>
           <div>
             <p className="text-justify">
-              <span className="text-justify">{text?.slice(0, index)}</span>
-              <span className="text-sky-500">
+              <span className="text-justify">{text?.slice(0, index <0 ? text.length:index)}</span>
+              {index >= 0 ? <span className="text-sky-500">
                 {text.slice(index, text.length)}
-              </span>
+              </span>:<></>}
             </p>
           </div>
         </div>

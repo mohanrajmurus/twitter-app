@@ -8,7 +8,8 @@ import { MdLocationPin } from "react-icons/md";
 import { useNavigate, useParams } from "react-router-dom";
 import { User } from "../store/Context";
 import { useMutation, useQueryClient } from "react-query";
-import { postNewTweet } from "../Util";
+import { postNewTweet, filterTags } from "../Util";
+
 const CreateTweet = () => {
   const queryClient = useQueryClient();
 
@@ -23,7 +24,8 @@ const CreateTweet = () => {
       console.log("Error");
     },
   });
-  const tags = newTweet.slice(newTweet.indexOf("#"), newTweet.length);
+  const tags = filterTags(newTweet);
+  
   const navigate = useNavigate();
 
   const {
@@ -35,7 +37,7 @@ const CreateTweet = () => {
       const tweet = {
         loginId: loginId,
         tweet: newTweet,
-        tag: tags,
+        tag: tags[0],
         authorId: user.id,
       };
       mutate(tweet);
@@ -47,13 +49,17 @@ const CreateTweet = () => {
   return (
     <div className="flex flex-col border-b-2 px-1 md:px-3 cursor-pointer md:flex-row">
       <div className="w-1/12">
-        <img src={profile} alt="profile" className="w-10 h-10 hidden md:block" />
+        <img
+          src={profile}
+          alt="profile"
+          className="w-10 h-10 hidden md:block"
+        />
       </div>
       <div className="w-10/12 flex flex-col items-start space-y-2 md:space-y-4">
-        <div>
+        <div className="w-full">
           <textarea
+            type="text"
             placeholder="What is happening?!"
-
             value={newTweet}
             onChange={(e) => setNewTweet(e.target.value)}
             className="outline-none resize-none w-full"

@@ -1,12 +1,13 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+const url = __API_URL__
 
 export const getTweets = () => {
   return useQuery({
     queryKey: ["tweets"],
     queryFn: async () => {
       const { data } = await axios.get(
-        "http://localhost:5000/api/v1.0/tweets/all"
+        `${url}tweets/all`
       );
       return data;
     },
@@ -18,7 +19,7 @@ export const getTweet = (loginId) => {
     queryKey: ["tweets", loginId],
     queryFn: async () => {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1.0/tweets/${loginId}`
+        `${url}tweets/${loginId}`
       );
       return data;
     },
@@ -29,7 +30,7 @@ export const postNewTweet = async (tweetData) => {
   const { loginId, tweet, tag, authorId } = tweetData;
 
   const { data } = await axios.post(
-    `http://localhost:5000/api/v1.0/tweets/${loginId}/add`,
+    `${url}tweets/${loginId}/add`,
     {
       tweet: tweet,
       tag: tag,
@@ -44,7 +45,7 @@ export const getTweetById = (id) => {
     queryKey: ["tweets", id],
     queryFn: async () => {
       const { data } = await axios.get(
-        `http://localhost:5000/api/v1.0/tweets/tweet/${id}`
+        `${url}tweets/tweet/${id}`
       );
       return data;
     },
@@ -65,6 +66,14 @@ export const timeCal = (createdAt) => {
     return `${tweetTime.toDateString().slice(4)}`;
   }
 };
+
+export const filterTags = (str) => {
+  let tags =[];
+  str.split(' ').map(item => item.includes('#')?tags.push(item):null)
+  return tags;
+}
+
+
 
 
 

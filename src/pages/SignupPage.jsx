@@ -5,6 +5,7 @@ import { BsTwitter } from "react-icons/bs";
 import { AiOutlineClose } from "react-icons/ai";
 import {NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+const url = __API_URL__
 const SignupPage = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
@@ -49,7 +50,7 @@ const SignupPage = () => {
     } else {
       setError("");
       const { data } = await axios.post(
-        "http://localhost:5000/api/v1.0/tweets/register",
+        `${url}tweets/register`,
         user
       );
       navigate("/login");
@@ -57,7 +58,7 @@ const SignupPage = () => {
   };
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm">
-      <div className="login--container w-full fixed  top-0 lg:w-1/2 bg-white  md:top-1/4 lg:left-1/4 z-10 py-10 rounded-2xl">
+      <div className="login--container w-full fixed  top-0 lg:w-1/2 bg-white  md:top-5 lg:left-1/4 z-10 py-10 rounded-2xl">
         <div className=" w-full flex flex-col items-center space-y-4">
           <BsTwitter size={25} fill="#1e9bf0" />
           <h1 className="text-2xl font-bold">Join Twitter today</h1>
