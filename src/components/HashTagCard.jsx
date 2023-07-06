@@ -1,13 +1,17 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { BiDotsHorizontal } from "react-icons/bi";
-
-const HashTagCard = () => {
+import { useNavigate } from "react-router-dom";
+const url = __API_URL__
+const HashTagCard = ({tags}) => {
+  const {tweetTag} = tags
+  const navigate = useNavigate()
   return (
-    <div className="card--container w-full flex justify-between items-center px-3 py-1 cursor-pointer hover:bg-gray-400 mb-4 ">
-      <div className="flex flex-col">
-        <span className="font-light text-sm">label</span>
-        <span className="font-bold">#Tag title</span>
-        <span className="font-light text-sm">2,000 Tweets</span>
+    <div className="card--container w-full flex justify-between items-center px-3 py-1 cursor-pointer hover:bg-gray-400 mb-4">
+      <div className="flex flex-col" onClick={()=> navigate(`/tag/${tweetTag.replace('#','%23')}`)}>
+       {/*  <span className="font-light text-sm">label</span> */}
+        <span className="font-bold">{tweetTag}</span>
+        <span className="font-light text-sm">{} Tweets</span>
       </div>
       {
         <BiDotsHorizontal

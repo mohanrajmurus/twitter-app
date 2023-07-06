@@ -3,7 +3,7 @@ import profile from "../assets/images/profile.png";
 import { FaRegComment, FaRetweet } from "react-icons/fa";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FiBarChart, FiShare } from "react-icons/fi";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useSearchParams } from "react-router-dom";
 import axios from "axios";
 import { User } from "../store/Context";
 import { useQueryClient } from "react-query";
@@ -11,6 +11,8 @@ import { timeCal } from "../Util";
 
 const TweetCard = ({ tweet }) => {
   const queryClient = useQueryClient();
+  //console.log(tweet);
+
   const { author, text, liked, likeCount, replies, replyCount, createdAt } =
     tweet;
   const [isOpen, setIsOpen] = useState(false);
@@ -82,7 +84,11 @@ const TweetCard = ({ tweet }) => {
           <div>
             <p className="text-justify">
               <span className="text-justify">{text?.slice(0, index <0 ? text.length:index)}</span>
-              {index >= 0 ? <span className="text-sky-500">
+              {index >= 0 ? <span className="text-sky-500" onClick={(e)=>{
+                e.stopPropagation();
+                navigate(`/tag/${(text.slice(index, text.length)).replace('#','%23')}`)
+                
+              }}>
                 {text.slice(index, text.length)}
               </span>:<></>}
             </p>

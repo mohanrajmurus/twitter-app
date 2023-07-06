@@ -12,6 +12,7 @@ import ResetPassword from "./pages/ResetPassword.jsx";
 import LayOut from "./components/LayOut.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import PrivateRouter from "./components/PrivateRouter";
+import ExplorePage from "./pages/ExplorePage";
 const queryClient = new QueryClient();
 const route = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const route = createBrowserRouter([
         element: <SingleTweetPage />,
       },
       {
+        path:'tag/:id',
+        element:<ExplorePage/>
+      },
+      {
         path: "login",
         element: <LoginPage />,
       },
@@ -47,6 +52,7 @@ const route = createBrowserRouter([
         path: "resetpassword",
         element: <ResetPassword />,
       },
+
     ],
   },
 ]);
