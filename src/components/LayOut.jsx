@@ -5,7 +5,7 @@ import HashTags from './HashTags'
 
 const LayOut = () => {
   return (
-    <div className='container w-full h-screen relative lg:w-4/5 mx-auto my-2 flex overflow-y-scroll'>
+    <div className='container w-full h-screen lg:w-4/5 mx-auto my-2 flex overflow-y-scroll'>
         <SideNavBar/>
         <Outlet/>
         <HashTags/>

@@ -9,7 +9,7 @@ const HashTags = () => {
   const [itemsCount, setItemsCount] = useState(4)
   
   return (
-    <div className="container hidden lg:flex flex-col items-start space-y-4 w-3/5 h-screen px-5 sticky ">
+    <div className="container hidden lg:flex flex-col items-start space-y-4 w-3/5 h-screen px-5 overflow-y-scroll scroll-smooth">
       <div className="w-full flex items-center rounded-3xl bg-gray-300 border-sky-500 hover:border-2 hover:text-gray-500 hover:bg-white px-3">
         <CiSearch />
         <input
