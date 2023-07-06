@@ -21,7 +21,7 @@ const SideNavBar = () => {
     dispatch,
   } = useContext(User);
   return (
-    <div className="container w-1/6 lg:w-2/5 h-screen flex flex-col space-y-4 px-3">
+    <div className="container w-1/6 lg:w-2/5 h-screen flex flex-col space-y-4 px-3 sticky top-0">
       <nav className="side--nav flex flex-col space-y-7 ">
         <div className="logo flex space-x-3 items-center">
           <BsTwitter size={30} fill="#1e9bf0" />

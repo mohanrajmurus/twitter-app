@@ -69,9 +69,6 @@ export const timeCal = (createdAt) => {
   if (currTime.toLocaleDateString() === tweetTime.toLocaleDateString()) {
     const diff = currTime.getHours() - tweetTime.getHours();
     const min = tweetTime.getMinutes() - currTime.getMinutes();
-    console.log(createdAt);
-    console.log(tweetTime);
-    console.log(currTime);
     return `${diff == 0 ? `${Math.abs(min)} minutes` : `${diff}h`}`;
   } else if (currTime.getFullYear() === tweetTime.getFullYear()) {
     return `${tweetTime.toDateString().slice(4, 10)}`;

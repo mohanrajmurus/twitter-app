@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { getHashTags, getTweetByTag } from "../Util";
+import {  getTweetByTag } from "../Util";
 import TweetCard from "../components/TweetCard";
 import { MdOutlineArrowBack } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
@@ -13,7 +13,7 @@ const ExplorePage = () => {
   const navigate = useNavigate();
   return (
     <div className="main--container w-full h-screen overflow-y-scroll scroll-smooth border-l-2">
-      <div className=" w-full flex  space-x-10">
+      <div className=" w-full flex  lg:space-x-10">
         <div className="flex items-center justify-between space-x-3 px-3">
           <MdOutlineArrowBack
             onClick={() => navigate("/")}
@@ -32,7 +32,7 @@ const ExplorePage = () => {
           />
         </div>
       </div>
-      <div className="flex justify-between mt-10 border-b-2">
+      <div className="btns flex justify-between mt-10 border-b-2 overflow-x-scroll">
                   <button className="px-6 py-3 hover:bg-gray-300">
                     Tweets
                   </button>

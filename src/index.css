@@ -5,6 +5,9 @@
 .main--container::-webkit-scrollbar {
     display: none;
 }
+.btns::-webkit-scrollbar {
+    display: none;
+}
 
 .container::-webkit-scrollbar {
     display: none;
